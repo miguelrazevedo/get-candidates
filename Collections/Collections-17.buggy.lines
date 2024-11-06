@@ -1,0 +1,3 @@
+org/apache/commons/collections/functors/EqualPredicate.java#84#        this(object, new DefaultEquator<T>());
+org/apache/commons/collections/functors/EqualPredicate.java#108#FAULT_OF_OMISSION
+org/apache/commons/collections/functors/EqualPredicate.java#109#FAULT_OF_OMISSION

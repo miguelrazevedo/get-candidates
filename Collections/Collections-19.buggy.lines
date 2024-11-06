@@ -1,0 +1,3 @@
+org/apache/commons/collections/list/SetUniqueList.java#236#        set.add(object); 
+org/apache/commons/collections/list/SetUniqueList.java#237#        set.remove(removed);
+org/apache/commons/collections/list/SetUniqueList.java#235#FAULT_OF_OMISSION

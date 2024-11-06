@@ -1,0 +1,2 @@
+org/apache/commons/collections/buffer/UnboundedFifoBuffer.java#133#        buffer = new Object[size + 1];
+org/apache/commons/collections/buffer/UnboundedFifoBuffer.java#118#FAULT_OF_OMISSION

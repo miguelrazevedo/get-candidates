@@ -1,0 +1,2 @@
+org/apache/commons/collections4/list/SetUniqueList.java#332#        return new SetUniqueList<E>(superSubList, subSet);
+org/apache/commons/collections4/list/SetUniqueList.java#27#FAULT_OF_OMISSION

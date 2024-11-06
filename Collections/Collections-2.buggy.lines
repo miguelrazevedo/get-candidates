@@ -1,0 +1,6 @@
+org/apache/commons/collections/ExtendedProperties.java#528#        include = inc;
+org/apache/commons/collections/ExtendedProperties.java#588#                    if (getInclude() != null && key.equalsIgnoreCase(getInclude())) {
+org/apache/commons/collections/ExtendedProperties.java#178#FAULT_OF_OMISSION
+org/apache/commons/collections/ExtendedProperties.java#513#FAULT_OF_OMISSION
+org/apache/commons/collections/ExtendedProperties.java#514#FAULT_OF_OMISSION
+org/apache/commons/collections/ExtendedProperties.java#572#FAULT_OF_OMISSION

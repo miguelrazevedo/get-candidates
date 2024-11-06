@@ -1,0 +1,6 @@
+org/apache/commons/collections/list/TreeList.java#903#            if (nextIndex == currentIndex) {
+org/apache/commons/collections/list/TreeList.java#904#                next = next.next();
+org/apache/commons/collections/list/TreeList.java#905#                parent.remove(currentIndex);
+org/apache/commons/collections/list/TreeList.java#906#            } else {
+org/apache/commons/collections/list/TreeList.java#908#                parent.remove(currentIndex);
+org/apache/commons/collections/list/TreeList.java#913#FAULT_OF_OMISSION

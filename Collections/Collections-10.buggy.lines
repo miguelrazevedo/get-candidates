@@ -1,0 +1,3 @@
+org/apache/commons/collections/map/MultiValueMap.java#69#public class MultiValueMap extends AbstractMapDecorator implements MultiMap {
+org/apache/commons/collections/map/MultiValueMap.java#460#    private static class ReflectionFactory implements Factory {
+org/apache/commons/collections/map/MultiValueMap.java#72#FAULT_OF_OMISSION

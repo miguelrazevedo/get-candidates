@@ -1,0 +1,2 @@
+org/apache/commons/collections/list/SetUniqueList.java#195#            add(it.next());
+org/apache/commons/collections/list/SetUniqueList.java#197#FAULT_OF_OMISSION

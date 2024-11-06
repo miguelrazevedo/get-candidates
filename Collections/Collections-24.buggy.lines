@@ -1,0 +1,3 @@
+org/apache/commons/collections4/collection/UnmodifiableBoundedCollection.java#43#        implements BoundedCollection<E> {
+org/apache/commons/collections4/collection/UnmodifiableBoundedCollection.java#23#FAULT_OF_OMISSION
+org/apache/commons/collections4/collection/UnmodifiableBoundedCollection.java#58#FAULT_OF_OMISSION

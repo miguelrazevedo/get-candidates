@@ -1,0 +1,8 @@
+org/apache/commons/collections/map/MultiValueMap.java#209#            result = coll.add(value);
+org/apache/commons/collections/map/MultiValueMap.java#213#                result = false;
+org/apache/commons/collections/map/MultiValueMap.java#313#            boolean result = coll.addAll(values);
+org/apache/commons/collections/map/MultiValueMap.java#317#                result = false;
+org/apache/commons/collections/map/MultiValueMap.java#319#            return result;
+org/apache/commons/collections/map/MultiValueMap.java#321#            return coll.addAll(values);
+org/apache/commons/collections/map/MultiValueMap.java#310#FAULT_OF_OMISSION
+org/apache/commons/collections/map/MultiValueMap.java#323#FAULT_OF_OMISSION

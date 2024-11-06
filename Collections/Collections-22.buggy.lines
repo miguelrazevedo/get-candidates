@@ -1,0 +1,3 @@
+org/apache/commons/collections4/map/ListOrderedMap.java#246#            final V old = put(index, entry.getKey(), entry.getValue());
+org/apache/commons/collections4/map/ListOrderedMap.java#247#            if (old == null) {
+org/apache/commons/collections4/map/ListOrderedMap.java#250#FAULT_OF_OMISSION

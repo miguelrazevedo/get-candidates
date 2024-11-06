@@ -1,0 +1,4 @@
+org/apache/commons/cli/OptionGroup.java#22#import java.util.HashMap;
+org/apache/commons/cli/OptionGroup.java#37#    private final Map<String, Option> optionMap = new HashMap<String, Option>();
+org/apache/commons/cli/OptionGroup.java#24#FAULT_OF_OMISSION
+org/apache/commons/cli/Options.java#60#    private final Map<String, OptionGroup> optionGroups = new java.util.HashMap<String, OptionGroup>();

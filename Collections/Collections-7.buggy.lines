@@ -1,0 +1,16 @@
+org/apache/commons/collections/ExtendedProperties.java#643#        Object obj = this.get(key);
+org/apache/commons/collections/ExtendedProperties.java#709#        put(key, value);
+org/apache/commons/collections/ExtendedProperties.java#731#            put(key, values);
+org/apache/commons/collections/ExtendedProperties.java#742#            put(key, value);
+org/apache/commons/collections/ExtendedProperties.java#835#            remove(key);
+org/apache/commons/collections/ExtendedProperties.java#1094#            put(key, values);
+org/apache/commons/collections/ExtendedProperties.java#1146#            put(key, values);
+org/apache/commons/collections/ExtendedProperties.java#1212#            put(key, b);
+org/apache/commons/collections/ExtendedProperties.java#1306#            put(key, b);
+org/apache/commons/collections/ExtendedProperties.java#1376#            put(key, s);
+org/apache/commons/collections/ExtendedProperties.java#1474#            put(key, i);
+org/apache/commons/collections/ExtendedProperties.java#1544#            put(key, l);
+org/apache/commons/collections/ExtendedProperties.java#1614#            put(key, f);
+org/apache/commons/collections/ExtendedProperties.java#1684#            put(key, d);
+org/apache/commons/collections/ExtendedProperties.java#1726#FAULT_OF_OMISSION
+org/apache/commons/collections/ExtendedProperties.java#1756#FAULT_OF_OMISSION

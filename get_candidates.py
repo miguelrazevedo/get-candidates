@@ -2,6 +2,8 @@ import csv
 import subprocess
 import argparse
 import os
+import time
+import fnmatch
 
 PIPE = subprocess.PIPE
 
@@ -49,10 +51,13 @@ def get_buggy_lines(project, bug, dir_format, project_dir, absent_path):
 
     subprocess.call(f"mv /tmp/{project}-{bug}-{i}.buggy.lines {project_dir}/{bug}-{i}.buggy.lines", shell=True)
 
-    subprocess.call(f"java -jar {absent_path} collectCandidates --inputFile {project_dir}/{bug}-{i}.buggy.lines --outputFile {project_dir}/{project}-{bug}-{i}.candidates --srcBug {buggy_dir}/{project_source} --srcFix {fixed_dir}/{project_source}/{source_dir[i]}.java", shell=True)
+  try:
+    subprocess.call(f"java -jar {absent_path} collectCandidates --inputFile {project_dir}/{bug}-{i}.buggy.lines --outputFile {project_dir}/{project}-{bug}-{i}.candidates --srcBug {buggy_dir}/{project_source} --srcFix {fixed_dir}/{project_source}/{source_dir[i]}.java", shell=True, timeout=30)
+  except subprocess.TimeoutExpired:
+    print(f"Timeout for {project}-{bug}-{i}.candidates")
 
   # Get all .buggy.lines files and combine them into one
-  buggy_lines_files = [filename for filename in os.listdir(current_dir + f"/{project}/{bug}") if filename.endswith(".buggy.lines")]
+  buggy_lines_files = [filename for filename in os.listdir(project_dir) if fnmatch.fnmatch(filename, f"{bug}-*.buggy.lines")]
   with open(f"{project_dir}/{project}-{bug}.buggy.lines", "w") as new_buggy_file:
     for file in buggy_lines_files:
       filename = project_dir + "/" + file
@@ -66,7 +71,7 @@ def get_buggy_lines(project, bug, dir_format, project_dir, absent_path):
     
 
   # Get all .candidates files and combine them into one
-  candidates_files = [filename for filename in os.listdir(current_dir + f"/{project}/{bug}") if filename.endswith(".candidates")]
+  candidates_files = [filename for filename in os.listdir(project_dir) if fnmatch.fnmatch(filename, f"{project}-{bug}-*.candidates")]
   with open(f"{project_dir}/{project}-{bug}.candidates", "w") as new_candidate_file:
     for file in candidates_files:
       filename = project_dir + "/" + file
@@ -102,9 +107,14 @@ absent_path = args.absent_dir
 if not os.path.exists(absent_path):
   raise RuntimeError("ABSENT .jar file not found!")
 
-for i, (project, bug) in enumerate(versions, start=1):
+start_time = time.time()
+for i, (project, bug, num_buggy_lines, num_faults_omission) in enumerate(versions[1:], start=1):
 
-  project_dir = os.getcwd() + f"/{project}/{bug}" 
+  if int(num_faults_omission) < 1:
+    continue
+  
+  project_dir = os.getcwd() + f"/{project}" 
+  print(project_dir)
   try:
     os.makedirs(project_dir)
   except FileExistsError:
@@ -116,3 +126,21 @@ for i, (project, bug) in enumerate(versions, start=1):
   get_buggy_lines(project, bug, args.checkout_dir_format, project_dir, absent_path)
 
   remove_check_out_dirs(project, bug, args.checkout_dir_format)
+
+end_time = time.time()
+elapsed_time = end_time - start_time
+
+start_time_local = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime(start_time))
+print(f"Starting time: {start_time_local}")
+
+
+end_time_local = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime(end_time))
+print(f"Ending time: {end_time_local}")
+
+execution_time_seconds = end_time - start_time
+execution_time_minutes = execution_time_seconds / 60
+
+print(f"Execution time (s): {execution_time_seconds:.2f}")
+print(f"Execution time (min): {execution_time_minutes:.2f} minutes")
+
+
